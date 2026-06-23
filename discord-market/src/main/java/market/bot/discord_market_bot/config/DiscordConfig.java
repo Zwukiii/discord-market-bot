@@ -44,7 +44,18 @@ public class DiscordConfig {
                                         "ticker",
                                         "Stock ticker such as GOOGL or AAPL",
                                         true
+                                ),
+                        Commands.slash(
+                                "crypto",
+                                "Get the current quote for cryptocurrency"
+                        )
+                                .addOption(
+                                        OptionType.STRING,
+                                        "symbol",
+                                        "Crypto symbol such as SOL, BTC, or ETH",
+                                        true
                                 )
+
                 )
                 .queue(
                         commands -> System.out.println("/stock command registered"),
