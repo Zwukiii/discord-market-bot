@@ -10,10 +10,12 @@ import org.springframework.stereotype.Service;
 import java.time.Instant;
 
 @Service
-@RequiredArgsConstructor
 public class StockService {
-    private FinnHubClient finnHubClient;
+    private final FinnHubClient finnHubClient;
 
+        public StockService(FinnHubClient finnHubClient) {
+            this.finnHubClient = finnHubClient;
+        }
 
     public StockQuote getStockQuote(String ticker) {
         FinnHubQuoteResponse quote = finnHubClient.fetchStockQuote(ticker);

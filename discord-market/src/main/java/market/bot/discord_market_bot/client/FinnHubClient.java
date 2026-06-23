@@ -23,8 +23,8 @@ public class FinnHubClient {
     }
 
 
-    public FinnHubQuoteResponse fetchStockQuote(String ticker)  {
-        FinnHubQuoteResponse response =  webClient.get()
+    public FinnHubQuoteResponse fetchStockQuote(String ticker) {
+        FinnHubQuoteResponse response = webClient.get()
                 .uri(builder ->
                         builder.scheme("https")
                                 .host("finnhub.io")
@@ -32,8 +32,6 @@ public class FinnHubClient {
                                 .queryParam("symbol", ticker)
                                 .queryParam("token", apiKey)
                                 .build()
-
-
                 )
                 .retrieve()
                 .bodyToMono(FinnHubQuoteResponse.class)
@@ -42,7 +40,9 @@ public class FinnHubClient {
         if (response == null || response.timeStamp() == 0) {
             throw new StockNotFoundException(ticker);
         }
+
         return response;
+
     }
 
 }
