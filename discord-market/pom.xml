@@ -56,6 +56,13 @@
 			<scope>test</scope>
 		</dependency>
 
+        <!-- JDA dependecy   -->
+        <dependency>
+            <groupId>net.dv8tion</groupId>
+            <artifactId>JDA</artifactId>
+            <version>6.4.2</version>
+        </dependency>
+
         <!-- Lambok   -->
     <!-- Source: https://mvnrepository.com/artifact/org.projectlombok/lombok -->
         <dependency>
@@ -64,6 +71,8 @@
             <optional>true</optional>
         </dependency>
     </dependencies>
+
+
 	<build>
 		<plugins>
 			<plugin>
